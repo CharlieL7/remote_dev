@@ -27,13 +27,13 @@ BANF200="banff-200-c2-1.aus.dcgpu"
 alias rsyncFromBanff="rsync --info=progress2 --compress --recursive charllin@${BANF200}:~/rsync_dir/ ~/rsync_dir/"
 alias rsyncToBanff="rsync --info=progress2 --compress --recursive ~/rsync_dir/ charllin@${BANF200}:~/rsync_dir/"
 
+RSYNC_EXCLUDE_OPTS=(--exclude={".hg",".git","*build/","build*/",".tox","*.deb","*.rpm",".cache/",".ccls-cache/",".ccls-cache/","*.orig","depend/")
+
 MI350="asrock-1w300-b11-1.mkm.dcgpu"
 alias sshMI350="ssh charllin@${MI350}"
-alias rsyncToMI350Server="rsync --compress --info=progress2 --recursive \
-    --exclude={'build/','debug_docker_build/','docker_build/','depend/'} \
+alias rsyncToMI350Server="rsync --compress --info=progress2 --recursive $RSYNC_EXCLUDE_OPTS \
 ~/local_git/3_AMDMIGraphX charllin@${MI350}:/home/charllin/"
-alias rsyncFromMI350Server="rsync --compress --info=progress2 --recursive \
-    --exclude={'build/','debug_docker_build/','docker_build/','depend/'} \
+alias rsyncFromMI350Server="rsync --compress --info=progress2 --recursive $RSYNC_EXCLUDE_OPTS \
 charllin@${MI350}:/home/charllin/ ~/local_git/3_AMDMIGraphX "
 
 alias mtu1200="sudo ip li set mtu 1200 dev enp67s0"
