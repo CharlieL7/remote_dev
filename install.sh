@@ -7,7 +7,8 @@ sudo apt update
 sudo apt install neovim
 sudo apt install xclip
 
-# Copy bash settings over
+# Copy bash and inputrc settings over
 cp ./.bashrc ~/
 cp ./.inputrc ~/
 source ~/.bashrc
+bind -f ~/.inputrc
