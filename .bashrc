@@ -116,16 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# PATH and Libraries
-export PATH=$PATH:"/home/charlie/.local/bin"
-export PATH=$PATH:/opt/rocm/bin:/opt/rocm/opencl/bin:/opt/rocm/llvm/bin
-export XAUTHORITY=$HOME/.Xauthority
-
-# keychain
-eval $(keychain --eval --quiet github_key)
-eval $(keychain --eval --quiet conductor_key)
-alias ls='ls --color=auto'
-
 function color_my_prompt {
     local __user_and_host="\[\033[01;32m\]\u@\[\033[38;5;208m\]\h"
     local __cur_location="\[\033[01;34m\]\w"
