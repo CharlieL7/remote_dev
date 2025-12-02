@@ -27,7 +27,7 @@ BANF200="banff-200-c2-1.aus.dcgpu"
 alias rsyncFromBanff="rsync --info=progress2 --compress --recursive charllin@${BANF200}:~/rsync_dir/ ~/rsync_dir/"
 alias rsyncToBanff="rsync --info=progress2 --compress --recursive ~/rsync_dir/ charllin@${BANF200}:~/rsync_dir/"
 
-RSYNC_EXCLUDE_OPTS=(--exclude={".hg",".git","*build/","build*/",".tox","*.deb","*.rpm",".cache/",".ccls-cache/",".ccls-cache/","*.orig","depend/")
+RSYNC_EXCLUDE_OPTS="--exclude={'.hg','.git','build/','debug_docker_build/','docker_build/','.tox','*.deb','*.rpm','.cache/','.ccls-cache/','*.orig','depend/'}"
 
 MI350="asrock-1w300-b11-1.mkm.dcgpu"
 alias sshMI350="ssh charllin@${MI350}"
